@@ -117,6 +117,7 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -133,9 +134,19 @@ const Navbar = () => {
                 className="block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center"
               > Get Started
               </Link>
-
             </div>
 
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+              type="button"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button> 
+            </div>
+            
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
               <div className="md:hidden mt-4 pb-4 border-t border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200">
@@ -172,7 +183,6 @@ const Navbar = () => {
                 </div>
               </div>
             )}
-          </div>
         </nav>
       </header>
     </>
