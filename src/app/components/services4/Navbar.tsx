@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import Link from "next/link"; 
+import Link from "next/link";
 import { ChevronDown } from 'lucide-react';
 import { services } from '../Navbar';
+import { X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 type NavItem = { href: string; label: string; className?: string };
 
@@ -66,7 +68,7 @@ export default function SecureNetHeader() {
   }, [open]);
 
   return (
-    <header className="w-full">
+    <>
       {/* Disclaimer Bar */}
       <div id="disclaimer" className="border-b border-yellow-200 bg-yellow-50 py-2">
         <div className="mx-auto max-w-7xl px-4 text-center text-sm text-yellow-800">
@@ -79,10 +81,14 @@ export default function SecureNetHeader() {
       </div>
 
       {/* Navbar */}
-      <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
-        }`}>
-          <div className="mx-auto max-w-7xl px-4 py-4">
-          <div className="flex items-center justify-between">
+
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
+          }`}
+      >
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+
             {/* Brand */}
             <Link
               href="/"
@@ -94,8 +100,8 @@ export default function SecureNetHeader() {
               SecureNet Pro
             </Link>
 
- {/* Desktop Navigation */}
- <div className="hidden md:flex items-center space-x-6">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6">
               {/* Services Dropdown */}
               <div ref={servicesRef} className="relative">
 
@@ -132,8 +138,8 @@ export default function SecureNetHeader() {
                 )}
               </div>
 
-            {/* Desktop links */}
-               {NAV_ITEMS.map((item) => (
+              {/* Desktop links */}
+              {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -142,18 +148,20 @@ export default function SecureNetHeader() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Desktop CTA */}
+              <Link
+                href="/#contact"
+                className="rounded-lg bg-blue-600 px-6 py-2 text-white transition hover:bg-blue-700"
+              >
+                Get Started
+              </Link>
             </div>
 
-            {/* Desktop CTA */}
-            <Link
-              href="/#contact"
-              className="hidden rounded-full bg-purple-600 px-6 py-2 text-white transition hover:bg-purple-700 md:inline-flex"
-            >
-              Get Started
-            </Link>
+
 
             {/* Mobile toggle */}
-            <button
+            {/* <button
               type="button"
               aria-label="Toggle menu"
               aria-expanded={open}
@@ -182,38 +190,59 @@ export default function SecureNetHeader() {
                   </>
                 )}
               </svg>
+            </button> */}
+            <button
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+              type="button"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
           {/* Mobile menu */}
-          <div className={`md:hidden ${open ? "block" : "hidden"}`}>
-            <div className="mt-4 rounded-lg border border-gray-200 bg-white p-3 shadow-sm">
-              <div className="flex flex-col">
-                {NAV_ITEMS.map((item) => (
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="space-y-2 mt-4">
+                <div className="font-semibold text-gray-900 px-3 py-2">Services</div>
+
+                {services.map((service, idx) => (
                   <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={`rounded-md px-3 py-2 transition hover:bg-gray-100 ${
-                      item.className ?? "text-gray-800"
-                    }`}
+                    key={idx}
+                    href={service.href}
+                    className="flex items-center gap-3 px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.label}
+                    <div className="text-blue-600">{service.icon}</div>
+                    <div className="text-sm">{service.title}</div>
                   </Link>
                 ))}
+                <div className="flex flex-col">
+                  {NAV_ITEMS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={`block px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors"`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
 
-                <Link
-                  href="/#contact"
-                  onClick={() => setOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center rounded-full bg-purple-600 px-6 py-2 text-white transition hover:bg-purple-700"
-                >
-                  Get Started
-                </Link>
+                  <Link
+                    href="/#contact"
+                    onClick={() => setOpen(false)}
+                    className="mt-2 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
+                  >
+                    Get Started
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+          )}
+        </nav>
+      </header>
+    </>
   );
 }

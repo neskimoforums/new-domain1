@@ -28,8 +28,7 @@ const page = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); 
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
 
@@ -210,44 +209,63 @@ const page = () => {
                     {link.label}
                   </Link>
                 ))}
-                 {/* CTA Button */}
-              <Link
-                href="/contact"
-                className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Get Started
-              </Link>
 
+                {/* CTA Button */}
+                <Link
+                  href="/contact"
+                  className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Get Started
+                </Link>
+
+              </div>
               {/* Mobile Menu Button */}
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-gray-700 hover:text-blue-600 transition"
+                onClick={() => setMobileMenuOpen((v) => !v)}
+                className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Toggle menu"
+                type="button"
               >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
-              </div>   
             </div>
 
             {/* Mobile Navigation */}
             {mobileMenuOpen && (
-              <div className="md:hidden py-4 space-y-3">
-                {navLinks.map((link) => (
+              <div className="md:hidden mt-4 pb-4 border-t border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="space-y-2 mt-4">
+                  <div className="font-semibold text-gray-900 px-3 py-2">Services</div>
+
+                  {services.map((service, idx) => (
+                    <Link
+                      key={idx}
+                      href={service.href}
+                      className="flex items-center gap-3 px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <div className="text-blue-600">{service.icon}</div>
+                      <div className="text-sm">{service.title}</div>
+                    </Link>
+                  ))}
+                  <div className="flex flex-col gap-2">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={'block px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors'}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    href="#contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block py-2 transition text-gray-700 hover:text-blue-600`}
+                    className="block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition text-center"
                   >
-                    {link.label}
+                    Get Started
                   </Link>
-                ))}
-                <Link
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition text-center"
-                >
-                  Get Started
-                </Link>
+                </div>
               </div>
             )}
           </nav>

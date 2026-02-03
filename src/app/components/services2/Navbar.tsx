@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { services } from "../Navbar";
+import { X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -132,6 +134,8 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
+
               {navLinks.map((item) => (
                 <Link
                   key={item.href}
@@ -150,16 +154,27 @@ export default function Navbar() {
               </Link>
             </div>
 
+             {/* Mobile Menu Button */}
+             <button
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+              type="button"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
             {/* Mobile button */}
-            <button
+            {/* <button
               type="button"
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 transition hover:bg-gray-100 md:hidden"
-            >
+            > */}
               {/* Hamburger / Close */}
-              <svg
+              {/* <svg
                 className="h-6 w-6"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -181,8 +196,8 @@ export default function Navbar() {
                   </>
                 )}
               </svg>
-            </button>
-          </div>
+            </button> */}
+          {/* </div> */}
 
           {/* Mobile menu (overlay + panel) */}
           <div
@@ -224,7 +239,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
         </nav>
       </header >
     </>
