@@ -109,14 +109,14 @@ export default function Home() {
               <p className="mb-[18px] text-sm font-light text-white/90">Get instant support now</p>
 
               <a
-                href="tel:+918920624649"
+                href="tel:+13322199100"
                 className="mb-[15px] inline-block rounded-lg bg-[#00b347] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(0,179,71,0.4)] transition-all duration-300 hover:-translate-y-1"
               >
-                📞 +91 (892) 062-4649
+                📞 +1 (332) 219-9100
               </a>
 
               <button
-                onClick={() => window.location.href = 'tel:+918920624649'}
+                onClick={() => window.location.href = 'tel:+13322199100'}
                 className="my-3 w-full rounded-lg bg-red-600 py-[11px] text-[13px] font-semibold text-white shadow-[0_6px_15px_rgba(255,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-red-700"
               >
                 CALL NOW
