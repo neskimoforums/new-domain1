@@ -69,6 +69,11 @@ body {
       
   }
 
+  @keyframes float-custom {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
   @keyframes pulse-custom {
     0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
     70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
@@ -85,8 +90,8 @@ body {
   --animate-float: float 3s ease-in-out infinite;
   --animate-glow: pulse-glow 2s ease-in-out infinite;
 
-  --animate-floats: float 6s ease-in-out infinite; 
-  --animate-float-reverse: float 8s ease-in-out infinite reverse; 
+  --animate-floats: float-custom 6s ease-in-out infinite; 
+  --animate-float-reverse: float-custom 8s ease-in-out infinite reverse; 
   --animate-pulse-custom: pulse-custom 1.5s ease-in-out infinite; 
   /* Normal Light Blue Shadow */
   --shadow-blue: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
