@@ -15,11 +15,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Desktop Support', href: '#services' },
-    { name: 'Password Management', href: '#services' },
-    { name: 'Email Support', href: '#services' },
-    { name: 'Network Troubleshooting', href: '#services' },
-    { name: 'Cloud Services', href: '#services' }
+    { name: 'Help Desk Support', href: '/services/tier-1-help-desk-services-usa' },
+    { name: 'Help Desk Support', href: '/services/tier-2-help-desk-services-usa' },
+    { name: 'MicroSoft Support', href: '/services/microsoft-365-support-services-usa' },
+    { name: 'Cloud Support', href: '/services/cloud-support-services-usa' },
+    { name: 'Network Support', href: '/services/network-support-services-usa' }
   ];
 
   const resources = [
@@ -51,9 +51,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-white text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <a
+             href='https://www.gladiusesport.com/'
+             className="text-white text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               IT Support Pro
-            </h3>
+            </a>
             <p className="text-sm mb-4 text-gray-400">
               Leading provider of outsourced Tier-1 & Tier-2 IT support services for US businesses since 2015.
             </p>
@@ -117,8 +119,8 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="tel:+18005551234" className="hover:text-blue-400 transition-colors">
-                  +1 (800) 555-1234
+                <a href="tel:+13322199100" className="hover:text-blue-400 transition-colors">
+                  +1 (332) 219-9100
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
