@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* --- LIVE POPUP MODAL --- */}
       {showPopup && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-5 backdrop-blur-[2px]">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-5 backdrop-blur-[1px]">
           <div
             ref={popupRef}
             className="relative w-full max-w-[320px] overflow-hidden rounded-[15px] border-2 border-[#00b347] bg-gradient-to-br from-black via-[#1a1a1a] to-[#0d0d0d] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
