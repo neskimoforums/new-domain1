@@ -93,6 +93,7 @@ body {
   --animate-floats: float-custom 6s ease-in-out infinite; 
   --animate-float-reverse: float-custom 8s ease-in-out infinite reverse; 
   --animate-pulse-custom: pulse-custom 1.5s ease-in-out infinite; 
+  
   /* Normal Light Blue Shadow */
   --shadow-blue: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
   --animate-heartbeat: heartbeat 3s ease-in-out infinite;
