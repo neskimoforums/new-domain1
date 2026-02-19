@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import WhatWeDo from "./components/WhatWeDo";
 import Hero from "./components/Hero";
 import Services from "./components/Services"
@@ -10,8 +10,16 @@ import FAQ from "./components/Faq";
 import Navbar from "./components/Navbar";
 import HomeSchema from "./components/HomeSchema";
 import FloatingCall from "./components/FloatingCall";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Show popup after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowPopup(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       {/* --- SEO & META SECTION --- */}
@@ -59,8 +67,60 @@ export default function Home() {
       <Industry />
       <MarketAnalysis />
       <ClientReview />
-      <FAQ /> 
+      <FAQ />
       <FloatingCall />
+
+      {/* --- LIVE POPUP MODAL --- */}
+      {showPopup && (
+        <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/80 p-5 backdrop-blur-sm">
+          <div className="relative w-full max-w-[320px] overflow-hidden rounded-[15px] border-2 border-[#00b347] bg-linear-to-br from-black via-[#1a1a1a] to-[#0d0d0d] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-all duration-500">
+
+            {/* Animated Background Circles */}
+            <div className="animate-floats absolute -right-[10%] -top-[50%] h-50 w-50 rounded-full bg-white/10"></div>
+            <div className="animate-float-reverse absolute -left-[5%] -bottom-[30%] h-37.5 w-37.5 rounded-full bg-white/15"></div>
+
+            {/* Content Container */}
+            <div className="relative z-10">
+              {/* Pulsing Dot */}
+              <div className="animate-pulse-custom mx-auto mb-4 flex h-12.5 w-12.5 items-center justify-center rounded-full bg-linear-to-br from-red-600 to-red-800 shadow-[0_0_30px_rgba(255,0,0,0.7)]">
+                <span className="animate-pulse text-2xl text-white">●</span>
+              </div>
+
+              <h2 className="mb-3 text-[22px] font-bold tracking-tight text-[#00b347]">
+                We're Live!
+              </h2>
+
+              <p className="mb-4.5 text-sm font-light text-white/90">
+                Get instant support now
+              </p>
+
+              {/* Phone Link */}
+              <a
+                href="tel:+918920624649"
+                className="mb-3.75 inline-block rounded-lg bg-[#00b347] px-6 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(0,179,71,0.4)] transition-transform hover:scale-105 active:scale-95"
+              >
+                📞 +91 (892) 062-4649
+              </a>
+
+              {/* Call Now Button */}
+              <button
+                onClick={() => window.location.href = 'tel:+918920624649'}
+                className="my-3 w-full rounded-lg bg-red-600 py-2.75 text-[13px] font-semibold text-white shadow-[0_6px_15px_rgba(255,0,0,0.4)] transition-all hover:bg-red-700 active:scale-95"
+              >
+                CALL NOW
+              </button>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setShowPopup(false)}
+                className="mt-2 w-full rounded-lg border-2 border-[#00b347] bg-transparent py-2 text-[12px] font-semibold text-[#00b347] transition-all hover:bg-[#00b347]/10"
+              >
+                Maybe Later
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

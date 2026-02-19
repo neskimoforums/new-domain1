@@ -69,10 +69,25 @@ body {
       
   }
 
+  @keyframes pulse-custom {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
   /* Animation Classes */
   --animate-scroll: scroll 90s linear infinite;
   --animate-float: float 3s ease-in-out infinite;
   --animate-glow: pulse-glow 2s ease-in-out infinite;
+
+  --animate-floats: float 6s ease-in-out infinite; 
+  --animate-float-reverse: float 8s ease-in-out infinite reverse; 
+  --animate-pulse-custom: pulse-custom 1.5s ease-in-out infinite; 
   /* Normal Light Blue Shadow */
   --shadow-blue: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
   --animate-heartbeat: heartbeat 3s ease-in-out infinite;
