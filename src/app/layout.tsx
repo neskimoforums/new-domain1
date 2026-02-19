@@ -5,12 +5,23 @@ import "./globals.css";
 import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
 
 // Define all your icons and manifests in the Metadata object
 export const metadata: Metadata = {
   title: "IT Support Pro - Tier-1 & Tier-2 IT Support Services",
   description: "Comprehensive remote IT support solutions delivering expert help desk services, Microsoft 365 administration, cloud infrastructure support, and VPN services.",
   manifest: "/manifest.json",
+
+  // Verification codes
+  verification: {
+    google: "SckFZmUW7t05dgbvY1n8Cog6sXo7aieiKS5dbL4sY3k",
+  },
+
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -34,6 +45,8 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#ffffff",
     "msapplication-TileImage": "/ms-icon-144x144.png",
+    "theme-color": "#ffffff",
+    "yandex-verification": "1bdc28231c8fb1f7",
   },
 };
 
