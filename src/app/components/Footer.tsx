@@ -15,9 +15,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Help Desk Support', href: '/services/tier-1-help-desk-services-usa' },
-    { name: 'Help Desk Support', href: '/services/tier-2-help-desk-services-usa' },
-    { name: 'MicroSoft Support', href: '/services/microsoft-365-support-services-usa' },
+    { name: 'Help Desk Support Tier 1', href: '/services/tier-1-help-desk-services-usa' },
+    { name: 'Help Desk Support Tier 2', href: '/services/tier-2-help-desk-services-usa' },
+    { name: 'Microsoft 365 Support', href: '/services/microsoft-365-support-services-usa' },
     { name: 'Cloud Support', href: '/services/cloud-support-services-usa' },
     { name: 'Network Support', href: '/services/network-support-services-usa' }
   ];
