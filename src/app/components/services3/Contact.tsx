@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
-const PHONE_NUMBER_DISPLAY = "1-800-555-1234";
-const PHONE_TEL = "+18005551234";
+const PHONE_NUMBER_DISPLAY = "1-332-219-9100";
+const PHONE_TEL = "+13322199100";
 const EMAIL = "info@ms365support.com";
 
 export default function ContactCtaSection() {
