@@ -1,0 +1,247 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Allow: /
+
+# =================================
+# MAJOR SEARCH ENGINES
+# =================================
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+User-agent: Googlebot-Video
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Exabot
+Allow: /
+User-agent: Sogou
+Allow: /
+User-agent: SeznamBot
+Allow: /
+User-agent: NaverBot
+Allow: /
+User-agent: Daumoa
+Allow: /
+User-agent: 360Spider
+Allow: /
+User-agent: Qwantify
+Allow: /
+User-agent: Swisscows
+Allow: /
+User-agent: EcosiaBot
+Allow: /
+User-agent: MojeekBot
+Allow: /
+User-agent: PetalBot
+Allow: /
+User-agent: YepBot
+Allow: /
+
+# =================================
+# SOCIAL / PREVIEW BOTS
+# =================================
+User-agent: Facebot
+Allow: /
+User-agent: FacebookExternalHit
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: LinkedInBot
+Allow: /
+User-agent: Pinterestbot
+Allow: /
+User-agent: WhatsApp
+Allow: /
+User-agent: TelegramBot
+Allow: /
+User-agent: Discordbot
+Allow: /
+User-agent: Slackbot
+Allow: /
+
+# =================================
+# OPENAI / CHATGPT
+# =================================
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OpenAI-Python
+Allow: /
+User-agent: OpenAI-SearchBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# =================================
+# ANTHROPIC / CLAUDE (claude.ai)
+# =================================
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# =================================
+# GOOGLE AI
+# =================================
+User-agent: Google-Extended
+Allow: /
+User-agent: GeminiBot
+Allow: /
+User-agent: BardBot
+Allow: /
+
+# =================================
+# MICROSOFT AI
+# =================================
+User-agent: CopilotBot
+Allow: /
+User-agent: BingAI
+Allow: /
+
+# =================================
+# META / FACEBOOK AI
+# =================================
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: MetaAI
+Allow: /
+
+# =================================
+# PERPLEXITY
+# =================================
+User-agent: PerplexityBot
+Allow: /
+
+# =================================
+# COMMON CRAWL / DATASET AI
+# =================================
+User-agent: CCBot
+Allow: /
+User-agent: CommonCrawl
+Allow: /
+
+# =================================
+# OTHER MAJOR AI PLATFORMS
+# =================================
+User-agent: HuggingChat
+Allow: /
+User-agent: HuggingFace
+Allow: /
+User-agent: GrokBot
+Allow: /
+User-agent: xAI
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: PoeBot
+Allow: /
+User-agent: PiBot
+Allow: /
+User-agent: DeepSeek
+Allow: /
+User-agent: MistralAI
+Allow: /
+User-agent: CohereAI
+Allow: /
+User-agent: AlephAlphaBot
+Allow: /
+User-agent: StabilityAI
+Allow: /
+User-agent: RunwayML
+Allow: /
+User-agent: MidjourneyBot
+Allow: /
+
+# =================================
+# AI CODING / DEV ASSISTANTS
+# =================================
+User-agent: TabnineBot
+Allow: /
+User-agent: CodeWhispererBot
+Allow: /
+User-agent: BlackboxBot
+Allow: /
+User-agent: Sourcegraph
+Allow: /
+User-agent: ReplitBot
+Allow: /
+
+# =================================
+# RESEARCH / ANSWER ENGINES
+# =================================
+User-agent: ElicitBot
+Allow: /
+User-agent: ConsensusBot
+Allow: /
+User-agent: SemanticScholarBot
+Allow: /
+User-agent: WolframAlpha
+Allow: /
+
+# =================================
+# CONTENT & SEARCH AI TOOLS
+# =================================
+User-agent: JasperBot
+Allow: /
+User-agent: Writesonic
+Allow: /
+User-agent: Chatsonic
+Allow: /
+User-agent: FraseBot
+Allow: /
+User-agent: CopyAI
+Allow: /
+User-agent: Scalenut
+Allow: /
+User-agent: NeuralText
+Allow: /
+User-agent: MarketMuse
+Allow: /
+User-agent: SurferBot
+Allow: /
+
+# =================================
+# VOICE ASSISTANTS
+# =================================
+User-agent: AlexaBot
+Allow: /
+User-agent: GoogleAssistant
+Allow: /
+User-agent: SiriBot
+Allow: /
+
+# =================================
+# GENERIC AI / ML IDENTIFIERS
+# =================================
+User-agent: AIbot
+Allow: /
+User-agent: LLMbot
+Allow: /
+User-agent: MLBot
+Allow: /
+User-agent: DataBot
+Allow: /
+User-agent: ResearchBot
+Allow: /
+
+Sitemap: https://www.gladiusesport.com/sitemap.xml
