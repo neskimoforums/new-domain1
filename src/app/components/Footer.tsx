@@ -1,14 +1,14 @@
 "use client";
 import React from 'react';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Linkedin, 
-  Twitter, 
-  Facebook, 
-  Instagram 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram
 } from 'lucide-react';
 
 const Footer = () => {
@@ -51,15 +51,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <a
-             href='https://www.gladiusesport.com/'
-             className="text-white text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h3
+              className="text-white text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               IT Support Pro
-            </a>
+            </h3>
             <p className="text-sm mb-4 text-gray-400">
               Leading provider of outsourced Tier-1 & Tier-2 IT support services for US businesses since 2015.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -148,9 +147,9 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
             <p className="text-sm text-gray-400">
-              © {currentYear} IT Support Pro. All rights reserved.
+              © {currentYear} <a href="https://www.gladiusesport.com/" className="text-gray-400 hover:text-blue-400 transition-colors">IT Support Pro</a>. All rights reserved.
             </p>
-            
+
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               {legalLinks.map((link, index) => (
