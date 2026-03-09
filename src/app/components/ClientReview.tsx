@@ -137,7 +137,7 @@ const ClientReviews = () => {
 
   return (
     <section className="py-16 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-center gap-2 mb-8">
           <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />

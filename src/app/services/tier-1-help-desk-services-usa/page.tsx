@@ -100,6 +100,15 @@ export default function Header() {
       <div className="animated-bg"></div>
       <div className="texture-overlay"></div>
 
+    {/* Disclaimer Section */}
+    <div id="disclaimer" className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-sm text-yellow-800">
+            <strong>Disclaimer:</strong> We are an independent third-party service provider and are not an authorized organization affiliated with any specific manufacturers or vendors. All product names, logos, and brands are property of their respective owners.
+          </p>
+        </div>
+      </div>
+
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
         }`}>
         <nav className="container mx-auto px-4 py-4">
@@ -225,14 +234,7 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Disclaimer Section */}
-      <div id="disclaimer" className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-sm text-yellow-800">
-            <strong>Disclaimer:</strong> We are an independent third-party service provider and are not an authorized organization affiliated with any specific manufacturers or vendors. All product names, logos, and brands are property of their respective owners.
-          </p>
-        </div>
-      </div>
+      
 
       {/* Hero Section  */}
       <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white py-20 overflow-hidden">

@@ -5,23 +5,23 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-700 to-purple-900 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-900 via-blue-700 to-purple-900 text-white  ">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       </div>
-      <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
-        <div className="max-w-4xl">
+      <div className="mx-auto max-w-7xl px-4 py-18 sm:px-6 lg:px-8 text-center md:py-24 z-10">
+        <div className="max-w-7xl">
           <div className="mb-6 inline-block">
-            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full md:text-sm text-xs">
               Published: January 14, 2026 | Last Updated: January 14, 2026
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
             Outsourced Tier-1 & Tier-2 IT Support | Microsoft 365, Cloud & VPN Services USA
           </h1>
 
-          <p className="text-lg md:text-xl mb-8 text-blue-100 leading-relaxed">
+          <p className="mx-auto mb-8 max-w-3xl text-lg text-white/90 sm:text-xl md:text-2xl">
             Comprehensive remote IT support solutions delivering expert help desk services, technical escalation
             management, Microsoft 365 administration, cloud infrastructure support, and secure VPN implementation for
             US businesses. Our dedicated teams provide 24/7 coverage with rapid response times and proven expertise
@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
 
           {/* Rating */}
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center justify-center gap-3 mb-8">
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />

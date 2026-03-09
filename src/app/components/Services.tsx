@@ -81,7 +81,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         {/* Section Header */}
         <div className="text-center mb-12 animate-in fade-in slide-in-from-top duration-700">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">

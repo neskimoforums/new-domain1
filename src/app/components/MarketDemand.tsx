@@ -56,7 +56,7 @@ const MarketDemandAnalysis = () => {
 
   return (
     <section className="py-16 bg-gray-50" id = "case-studies">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-900">
           IT Support Services Market Demand Analysis
         </h2>

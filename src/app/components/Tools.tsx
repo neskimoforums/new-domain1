@@ -70,7 +70,7 @@ const ToolsTechnologies = () => {
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-20" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-50 rounded-full blur-3xl opacity-20" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-4 py-2 rounded-full mb-4">

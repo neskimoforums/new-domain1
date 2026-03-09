@@ -38,10 +38,10 @@ export default function ContactCtaSection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
           <a
-            href="tel:+13322199100"
+            href="tel:+16465364302"
             className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 inline-block"
           >
-            📞 Call: +1 (332) 219-9100
+            📞 Call: +1 (646) 536-4302
           </a>
 
           <a

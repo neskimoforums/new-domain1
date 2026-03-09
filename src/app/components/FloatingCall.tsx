@@ -23,7 +23,7 @@ export default function FloatingCall() {
                         - Fast heartbeat + Light color ONLY on hover.
                     */}
                     <a
-                        href="tel:+13322199100"
+                        href="tel:+16465364302"
                         className="bg-green-400 hover:bg-green-300 w-18 h-18 rounded-full shadow-2xl relative z-10 flex items-center justify-center border-2 border-white/10 transition-colors duration-200 hover:animate-heartbeat-fast"
                     >
                         <span className="text-3xl">☎️</span>

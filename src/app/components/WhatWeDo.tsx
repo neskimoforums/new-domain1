@@ -4,9 +4,9 @@ import { responsibilities, skills } from '../data/index';
 const WhatWeDo = () => {
   return (
     <section className="py-16 bg-white" id="why-us">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">What We Do</h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Role Overview Card */}
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl mb-8 shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-2xl font-bold mb-4 text-blue-900">Role Overview</h3>
