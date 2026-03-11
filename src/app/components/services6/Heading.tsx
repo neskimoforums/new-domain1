@@ -22,7 +22,7 @@ type SectionHeadingProps = {
         </h2>
   
         {lead ? (
-          <p className="text-muted mt-4 max-w-3xl text-[var(--muted)] text-base leading-8 md:text-lg">
+          <p className="text-muted tracking-wide mt-4 max-w-3xl text-[var(--muted)] text-base leading-8 md:text-[17px]">
             {lead}
           </p>
         ) : null}

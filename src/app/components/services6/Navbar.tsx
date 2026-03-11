@@ -4,7 +4,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { services } from "../Navbar";
- 
+
 
 const links = [
   { href: '#services', label: 'Services' },
@@ -47,7 +47,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-[60] border-b border-cyan-300/10 bg-slate-950/80 backdrop-blur-xl">
       <div className="container-shell flex h-20 items-center justify-between">
-        
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
           <span className="text-cyan-400">⚡</span>
@@ -96,8 +96,8 @@ export function Navbar() {
           ))}
 
           <Link
-            href="#contact"
-            className="rounded-full bg-cyan-500 px-6 py-2 text-sm font-bold text-slate-950 transition hover:bg-cyan-400"
+            href="/contact"
+            className="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-700 transition-all transform hover:scale-105"
           >
             Contact Us
           </Link>
@@ -114,9 +114,8 @@ export function Navbar() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-x-0 top-[80px] z-50 h-screen bg-slate-950 transition-transform duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-x-0 top-[80px] z-50 h-screen bg-slate-950 transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex flex-col gap-4 p-6">
           {links.map((link) => (
