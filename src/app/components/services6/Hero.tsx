@@ -15,23 +15,25 @@ export function HeroSection() {
           Services Guide
         </h1>
         <p className="text-muted mt-6 max-w-3xl text-base leading-8 sm:text-lg">
-          Cyber threats are increasing every year, and organizations across the world are facing sophisticated cyberattacks targeting data, infrastructure, and digital assets. This guide explains the <strong className="text-white">top 20 cybersecurity services that businesses use to protect their systems, data, and users from cyber threats</strong>.
+          Cyber threats are increasing every year, and organizations across the world are facing sophisticated cyberattacks targeting data, infrastructure, and digital assets. Businesses today rely heavily on digital systems, cloud infrastructure, mobile devices, and online applications — making cybersecurity one of the most critical investments for modern organizations. This guide explains the <strong className="">top 20 cybersecurity services that businesses use to protect their systems, data, and users from cyber threats.</strong>.
         </p>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {stats.map((item:any) => (
-            <div key={item.label} className="bg-card rounded-2xl border border-cyan-300/15 p-5 text-center">
+        <div className="mt-10 grid max-w-4xl grid-cols-2 gap-5 md:grid-cols-4">
+          {stats.map((item: any) => (
+            <div key={item.label} className="bg-card rounded-2xl border border-cyan-300/15 py-4 text-center">
               <div className="font-syne text-2xl font-extrabold text-cyan-300 md:text-3xl">{item.value}</div>
-              <div className="font-mono-custom mt-1 text-[11px] uppercase tracking-[0.2em] text-slate-400">
+              <div
+                style={{ fontFamily: "'DM Mono', monospace" }}
+                className="font-mono text-(--muted) mt-1 text-[11px] tracking-[0.1em] ">
                 {item.label}
               </div>
             </div>
           ))}
         </div>
 
-        <div 
+        <div
           className="opacity-0 animate-fade-up"
-          style={{ 
+          style={{
             animationDelay: '1s',
             display: 'inline-flex',
             alignItems: 'center',
@@ -39,16 +41,16 @@ export function HeroSection() {
             fontSize: '13px',
             color: 'var(--muted, #94a3b8)',
             fontFamily: "'DM Mono', monospace",
-            marginTop:40
+            marginTop: 40
           }}
-        > 
-          <span className="animate-bob inline-flex items-center gap-2" style={{ animationDelay: '2s' }}>
-            <span className="text-cyan-300">↓</span>
-            <span>Scroll to explore all 20 services</span>
+        >
+          <span className="animate-bob inline-flex items-center gap-4" style={{ animationDelay: '2s' }}>
+            <span className="font-bold text-sm">↓</span>
+            <span className=" text-sm">Scroll to explore all 20 services</span>
           </span>
         </div>
 
-    </div>
+      </div>
     </section>
   );
 }
