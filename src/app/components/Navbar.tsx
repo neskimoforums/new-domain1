@@ -43,6 +43,12 @@ export const services: ServiceItem[] = [
     description: "Secure network implementation",
     href: "/services/network-support-services-usa",
   },
+  {
+    icon: <Lock className="w-5 h-5" />,
+    title: "Cybersecurity Consulting",
+    description: "Cybersecurity consulting services",
+    href: "/services/cybersecurity-consulting-services",
+  },
 ];
 
 export default function Navbar() {

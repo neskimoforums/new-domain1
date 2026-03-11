@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg: #060b14;
+  --bg2: #0a1220;
+  --bg3: #0f1c2e;
+  --accent: #00e5ff;
+  --accent2: #ff3c6e;
+  --accent3: #a3ff57;
+  --gold: #ffd166;
+  --text: #e2eaf6;
+  --muted: #7a92b2;
+  --card: #0d1a2d;
+  --border: rgba(0, 229, 255, 0.15);
+  --border2: rgba(163, 255, 87, 0.12);
+}
+
+.faq-q {
+  font-family: 'Syne', sans-serif !important;
 }
 
 @theme inline {
@@ -18,6 +34,11 @@
     --foreground: #ededed;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   background: var(--background);
@@ -85,6 +106,26 @@ body {
     50% { opacity: 0.3; }
   }
 
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
   /* Animation Classes */
   --animate-scroll: scroll 90s linear infinite;
   --animate-float: float 3s ease-in-out infinite;
@@ -99,7 +140,17 @@ body {
   --animate-heartbeat: heartbeat 3s ease-in-out infinite;
   --animate-heartbeat-fast: heartbeat-fast 0.7s ease-in-out infinite;
   --animate-ping: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  
 }
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bob {
+  animation: bob 2s ease-in-out infinite;
+}
+
 
 .animate-marquee {
   animation: marquee 35s linear infinite;
@@ -124,4 +175,75 @@ body {
 /* Custom utility for the border + glow combo */
 .glow-border {
 @apply border border-blue-400 animate-glow;
+}
+
+.container-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-shell {
+    padding-inline: 32px;
+  }
+}
+
+
+.font-syne {
+  font-family: var(--font-syne), sans-serif;
+}
+
+.font-mono-custom {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.bg-card {
+  background: var(--card);
+}
+
+.bg-panel {
+  background: var(--bg2);
+}
+
+.bg-panel-alt {
+  background: var(--bg3);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-accent2 {
+  color: var(--accent2);
+}
+
+.text-accent3 {
+  color: var(--accent3);
+}
+
+.border-accent-soft {
+  border-color: var(--border);
+}
+
+.card-glow {
+  box-shadow: 0 20px 60px rgba(0, 229, 255, 0.08);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
