@@ -49,9 +49,13 @@ export function Navbar() {
       <div className="container-shell flex h-20 items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
-          <span className="text-cyan-400">⚡</span>
-          <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent tracking-tight">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-[20px] text-cyan-400">⚡</span>
+          <span
+            style={{ fontFamily: "'Syne', sans-serif" }}
+            className="text-[18px] font-[800] leading-none text-cyan-400 tracking-[-0.5px]"
+          >
             CyberGuide
           </span>
         </Link>
@@ -62,7 +66,7 @@ export function Navbar() {
           <div ref={servicesRef} className="relative">
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-cyan-300"
+              className="flex items-center gap-1 text-sm font-medium text-slate-400 transition hover:text-cyan-300"
             >
               Services
               <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
@@ -85,6 +89,7 @@ export function Navbar() {
             )}
           </div>
 
+
           {links.map((link) => (
             <Link
               key={link.href}
@@ -96,7 +101,7 @@ export function Navbar() {
           ))}
 
           <Link
-            href="/contact"
+            href="/#contact"
             className="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-700 transition-all transform hover:scale-105"
           >
             Contact Us
@@ -114,27 +119,43 @@ export function Navbar() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed inset-x-0 top-[80px] z-50 h-screen bg-slate-950 transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-x-0  z-50 h-screen bg-slate-950 transition-transform duration-300 animate-in fade-in slide-in-from-top-2 md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex flex-col gap-4 p-6">
-          {links.map((link) => (
+        <div className="space-y-2 mt-4">
+          <div className="font-semibold px-3 py-2">Services</div>
+
+          {services.map((service, idx) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={idx}
+              href={service.href}
+              className="flex items-center gap-3 px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl font-medium text-slate-200 border-b border-white/5 pb-4"
             >
-              {link.label}
+              <div className="text-blue-600">{service.icon}</div>
+              <div className="text-sm">{service.title}</div>
             </Link>
           ))}
-          <Link
-            href="#contact"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 flex h-14 items-center justify-center rounded-xl bg-cyan-500 text-lg font-bold text-slate-950"
-          >
-            Contact Us
-          </Link>
+
+          <div className="flex flex-col px-3">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-1.5 md:text-sm text-[12px] hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 px-1 inline-flex items-center justify-center h-14 rounded-xl py-2 bg-cyan-500 text-lg font-bold text-slate-950"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </header>
