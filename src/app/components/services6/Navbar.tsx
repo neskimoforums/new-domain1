@@ -47,8 +47,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-[60] border-b border-cyan-300/10 bg-slate-950/80 backdrop-blur-xl">
       <div className="container-shell flex h-20 items-center justify-between">
-
-        {/* Logo */}
+ 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-[20px] text-cyan-400">⚡</span>
@@ -143,13 +142,13 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-1.5 md:text-sm text-[12px] hover:bg-blue-50 rounded-lg transition-colors"
+                className="block py-1.5 md:text-sm text-[13px] hover:bg-blue-50 rounded-lg transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-2 px-1 inline-flex items-center justify-center h-14 rounded-xl py-2 bg-cyan-500 text-lg font-bold text-slate-950"
             >

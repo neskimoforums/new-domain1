@@ -13,21 +13,26 @@
   --text: #e2eaf6;
   --muted: #7a92b2;
   --card: #0d1a2d;
+  --ink: #0a0f1e;
+  --paper: #f5f3ee;
+  --accent: #1a5cff;
+  --accent2: #00d4aa;
+  --accent3: #ff4f1f;
+  --muted: #6b7280;
   --border: rgba(0, 229, 255, 0.15);
-  --border2: rgba(163, 255, 87, 0.12);
+  --border2: rgba(163, 255, 87, 0.12); 
+
+  /* --- Managed IT Guide Specific --- */
+  --it-accent: #1a5cff;
+  --it-accent-soft: #eef4ff;
+  --it-accent2: #00d4aa;
+  --it-accent3: #ff4f1f;
+  --it-muted: #6b7280;
+  --it-border: #e5e7eb;
+  --it-card: #ffffff;
 }
 
-.faq-q {
-  font-family: 'Syne', sans-serif !important;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+ 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -44,6 +49,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto max-w-7xl px-6;
+  }
+}
+
+/* Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+@keyframes underline-in {
+  to { transform: scaleX(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes marquee {
@@ -140,6 +170,7 @@ body {
   --animate-heartbeat: heartbeat 3s ease-in-out infinite;
   --animate-heartbeat-fast: heartbeat-fast 0.7s ease-in-out infinite;
   --animate-ping: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-marquee: marquee 35s linear infinite;
   
 }
 
@@ -246,4 +277,52 @@ body {
     linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+
+/* --- Managed IT Specific UI Elements --- */
+.result-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--it-accent-soft);
+  color: var(--it-accent);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 8px 8px 0 0;
+}
+
+.data-table, .choose-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.data-table th, .choose-table th {
+  text-align: left;
+  padding: 16px;
+  background: #f9fafb;
+  border-bottom: 2px solid var(--it-border);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--it-muted);
+}
+
+.data-table td, .choose-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--it-border);
+  font-size: 0.95rem;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.faq-item.open .faq-a {
+  max-height: 500px;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
 }

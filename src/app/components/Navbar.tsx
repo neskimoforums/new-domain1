@@ -49,6 +49,12 @@ export const services: ServiceItem[] = [
     description: "Cybersecurity consulting services",
     href: "/services/cybersecurity-consulting-services",
   },
+  {
+    icon: <Lock className="w-5 h-5" />,
+    title: "Managed IT Services",
+    description: "Managed IT Services",
+    href: "/services/managed-it-services",
+  },
 ];
 
 export default function Navbar() {
