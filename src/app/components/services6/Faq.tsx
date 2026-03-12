@@ -21,7 +21,7 @@ export function FaqSection() {
           lead="Authoritative answers to the most common questions about cybersecurity services."
         />
 
-        <div className="mx-auto flex max-w-4xl flex-col gap-4">
+        <div className="flex max-w-4xl flex-col gap-4">
           {faqs.map((faq, index) => (
             <FaqItem
               key={faq.q}

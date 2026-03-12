@@ -170,15 +170,15 @@ export default function ManagedITGuide() {
                 <header
                     className={`sticky top-0 z-[100] transition-all duration-300 border-b ${isScrolled
                         ? "bg-[#f5f3ee]/95 backdrop-blur-md shadow-md border-[#e2ddd6]"
-                        : "bg-[#f5f3ee] border-transparent"
+                         : "bg-[#f5f3ee] border-transparent"
                         }`}
                 >
-                    <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between px-0 py-4">
                         {/* Logo */}
                         <a
                             href="/"
                             style={{ fontFamily: "'Syne', sans-serif" }}
-                            className="font-extrabold text-xl tracking-tighter flex items-center gap-2"
+                            className="font-extrabold text-xl tracking-tighter flex items-center gap-0"
                         >
                             <span className="text-blue-600">IT</span>Guide 2025
                         </a>
@@ -453,49 +453,7 @@ export default function ManagedITGuide() {
 
                     <Conclusion />
 
-                    {/* Footer */}
-                    <footer className="bg-[#0a0f1e] text-gray-400 py-16 px-6">
-                        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-16">
-                            <div className="col-span-1.5">
-                                <div className="text-white font-black text-xl tracking-tighter mb-6">
-                                    <span className="text-blue-600">IT</span>Guide 2025
-                                </div>
-                                <p className="text-[0.82rem] leading-relaxed mb-6">
-                                    The definitive resource for managed IT services strategy, implementation, and market trends. Empowering modern businesses since 2015.
-                                </p>
-                                <div className="flex gap-4">
-                                    <div className="bg-white/5 p-2 rounded hover:text-blue-400 cursor-pointer transition-colors"><Activity size={18} /></div>
-                                    <div className="bg-white/5 p-2 rounded hover:text-blue-400 cursor-pointer transition-colors"><Shield size={18} /></div>
-                                    <div className="bg-white/5 p-2 rounded hover:text-blue-400 cursor-pointer transition-colors"><Cloud size={18} /></div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5 className="text-white font-bold text-xs uppercase tracking-widest mb-6">Services</h5>
-                                <ul className="text-[0.8rem] space-y-3">
-                                    <li><a href="#" className="hover:text-blue-400">Cybersecurity</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Cloud Strategy</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Network Design</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Compliance Audit</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h5 className="text-white font-bold text-xs uppercase tracking-widest mb-6">Resources</h5>
-                                <ul className="text-[0.8rem] space-y-3">
-                                    <li><a href="#" className="hover:text-blue-400">White Papers</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Market Reports</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Pricing Calculator</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Case Studies</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="max-w-7xl mx-auto pt-8 flex flex-wrap justify-between items-center gap-6 text-[0.75rem]">
-                            <p>© 2025 IT Knowledge Hub. All Rights Reserved.</p>
-                            <div className="flex gap-3">
-                                <span className="bg-white/5 px-3 py-1 rounded text-[0.65rem] font-mono">ISO 27001</span>
-                                <span className="bg-white/5 px-3 py-1 rounded text-[0.65rem] font-mono">GDPR COMPLIANT</span>
-                            </div>
-                        </div>
-                    </footer>
+                    
 
                     <FloatingCall />
                 </main>

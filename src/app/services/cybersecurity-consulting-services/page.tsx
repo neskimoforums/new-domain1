@@ -58,7 +58,7 @@ function Page() {
         <CaseStudiesSection />
         <ConclusionSection />
         <FaqSection />
-        <FooterSection />
+        {/* <FooterSection /> */}
         <FloatingCall />
       </main>
     </>

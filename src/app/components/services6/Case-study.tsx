@@ -10,14 +10,14 @@ export function CaseStudyCard({ item }: CaseStudyCardProps) {
       <div 
         className="absolute left-0 top-0 h-full w-[4px]" 
         style={{ 
-          background: 'linear-gradient(180deg, var(--accent3), var(--accent))' 
+          background: 'linear-gradient(180deg, #05df72 , var(--accent))' 
         }} 
       />
 
       <div className="pl-2"> 
         <div 
           style={{ fontFamily: "'DM Mono', monospace" }}
-          className="mb-2 text-[11px] uppercase tracking-[0.3em] text-[var(--accent3)]"
+          className="mb-2 text-[12px] font-bold  uppercase tracking-[0.3em] text-green-400 "
         >
           CASE {item.num}
         </div>
@@ -40,7 +40,7 @@ export function CaseStudyCard({ item }: CaseStudyCardProps) {
           <div>
             <div 
               style={{ fontFamily: "'DM Mono', monospace" }}
-              className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[var(--accent2)]"
+              className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[var(--accent3)]"
             >
               Challenge
             </div>
@@ -50,7 +50,7 @@ export function CaseStudyCard({ item }: CaseStudyCardProps) {
           <div>
             <div 
               style={{ fontFamily: "'DM Mono', monospace" }}
-              className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[var(--accent)]"
+              className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[var(--accent2)]"
             >
               Solution
             </div>
@@ -60,13 +60,13 @@ export function CaseStudyCard({ item }: CaseStudyCardProps) {
           <div>
             <div 
               style={{ fontFamily: "'DM Mono', monospace" }}
-              className="mb-1 text-[10px] uppercase tracking-[0.2em] text-[var(--accent3)]"
+              className="mb-1 text-[12px] uppercase tracking-[0.2em] font-bold text-green-400"
             >
               Result
             </div>
             <div 
               style={{ fontFamily: "'Syne', sans-serif" }}
-              className="text-[22px] font-extrabold text-[var(--accent3)]"
+              className="text-[22px] font-extrabold text-green-500"
             >
               {item.resultVal}
             </div>
