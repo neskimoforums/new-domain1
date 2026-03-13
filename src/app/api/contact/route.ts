@@ -19,11 +19,11 @@ export async function POST(req: Request) {
       from: `"${name}" <${process.env.SMTP_USER}>`,
       to: "suresh@l4rg.us",  
       replyTo: email, 
-      subject: `[Contact Form] ${subject}`,
+      subject: `Query From Gladiusesport ${subject}`,
       text: `From: ${name} (${email})\n\n${message}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;">
-          <h3>New Message from ${name}</h3>
+          <p><strong>New Message from:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Subject:</strong> ${subject}</p>
           <p><strong>Message:</strong></p>
