@@ -9,7 +9,8 @@ const contactSchema = z.object({
   name: z.string().min(2, { message: "Name is too short" }), 
   email: z.string().email({ message: "Invalid email address" }),
   subject: z.string().min(5, { message: "Subject is too short" }),
-  message: z.string().min(10, { message: "Message is too short" }),});
+  message: z.string().min(10, { message: "Message is too short" }),
+});
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
@@ -24,23 +25,19 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setStatus("submitting");
 
-    const formData = new FormData();
-    formData.append("access_key", "9436b83b-6ecb-4e54-bac1-e46dd37715fd"); 
-    formData.append("name", data.name);
-    formData.append("email", data.email);
-    formData.append("subject", data.subject);
-    formData.append("message", data.message);
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // Sending data to our internal Next.js API route
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData
-      }).then((res) => res.json());
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      if (res.success) {
+      const result = await res.json();
+
+      if (result.success) {
         setStatus("success");
         reset();
-        // Redirect to a home page after 1.5 second
         setTimeout(() => {
           router.push("/"); 
         }, 1500);
@@ -64,15 +61,11 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Full Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Full Name
-            </label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
             <input
               {...register("name")}
               type="text"
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 outline-none ${
-                errors.name ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 transition duration-200 outline-none ${errors.name ? "border-red-500" : "border-gray-300"}`}
               placeholder="John Doe"
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
@@ -80,15 +73,11 @@ export default function ContactForm() {
 
           {/* Email Address */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email Address
-            </label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
             <input
               {...register("email")}
               type="email"
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 outline-none ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 transition duration-200 outline-none ${errors.email ? "border-red-500" : "border-gray-300"}`}
               placeholder="john@example.com"
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -96,15 +85,11 @@ export default function ContactForm() {
 
           {/* Subject */}
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-              Subject
-            </label>
+            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
             <input
               {...register("subject")}
               type="text"
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 outline-none ${
-                errors.subject ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 transition duration-200 outline-none ${errors.subject ? "border-red-500" : "border-gray-300"}`}
               placeholder="How can we help?"
             />
             {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
@@ -112,15 +97,11 @@ export default function ContactForm() {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Message
-            </label>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
             <textarea
               {...register("message")}
               rows={5}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 outline-none resize-none ${
-                errors.message ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 transition duration-200 outline-none resize-none ${errors.message ? "border-red-500" : "border-gray-300"}`}
               placeholder="Tell us what's on your mind..."
             />
             {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -134,17 +115,15 @@ export default function ContactForm() {
             {status === "submitting" ? "Sending..." : "Send Message"}
           </button>
 
-          {/* Success Message */}
           {status === "success" && (
             <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg animate-pulse">
               Message sent successfully! Redirecting...
             </div>
           )}
 
-          {/* Error Message */}
           {status === "error" && (
             <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-              Something went wrong. Please check your connection and try again.
+              Something went wrong. Please check your SMTP settings.
             </div>
           )}
         </form>
