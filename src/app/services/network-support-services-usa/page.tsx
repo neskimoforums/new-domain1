@@ -50,7 +50,7 @@ const page = () => {
       <meta property="og:url" content="https://www.gladiusesport.com/services/network-support-services-usa/" />
       <meta property="og:site_name" content="GladiuseSport" />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://www.gladiusesport.com/assets/img/cloud-support-services-usa.webp" />
+      <meta property="og:image" content="https://www.gladiusesport.com/assets/img/network-support-services-usa.webp" />
       <meta property="og:image:alt" content="Cloud Support and VPN Troubleshooting Services USA" />
       <meta property="og:image:type" content="image/webp" />
       <meta property="og:image:width" content="1200" />
@@ -62,7 +62,7 @@ const page = () => {
       <meta name="twitter:url" content="https://www.gladiusesport.com/services/network-support-services-usa/" />
       <meta name="twitter:title" content="VPN & Cloud Access Support Services in the USA" />
       <meta name="twitter:description" content="Get expert cloud support from GladiuseSport for VPN errors, remote access failures, and secure cloud connectivity across business environments in the USA." />
-      <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/cloud-support-services-usa.webp" />
+      <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/network-support-services-usa.webp" />
       <meta name="twitter:image:alt" content="VPN Troubleshooting and Cloud Support Services USA" />
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
