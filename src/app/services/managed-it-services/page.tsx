@@ -19,6 +19,7 @@ import { services } from '@/app/components/Navbar';
 import { X } from 'lucide-react';
 import { Menu } from 'lucide-react';
 import FloatingCall from '@/app/components/FloatingCall';
+import ManagedITServicesSchema from '@/app/components/services7/ManagedITServicesSchema';
 
 
 export default function ManagedITGuide() {
@@ -122,35 +123,43 @@ export default function ManagedITGuide() {
         <>
 
             {/* --- SEO SECTION START --- */}
-            <title>Managed IT Services: Complete Guide 2025 | Types, Benefits & Solutions</title>
-            <meta name="description" content="Comprehensive guide to managed IT services covering types, benefits, and solutions for modern businesses. Expert insights on network, cloud, security, and more." />
-            <meta name="keywords" content="managed IT services, MSP, managed service provider, cloud services, cybersecurity, IT support, network monitoring, infrastructure management" />
-            <meta name="author" content="GladiuseSport" />
+
+            {/* Meta Tags   */}
+            <title>Managed IT Services | IT Support, Network & Cybersecurity Solutions</title>
+
+            <meta name="description" content="Professional Managed IT Services including network monitoring, cybersecurity, cloud management, data backup, and 24/7 IT support to keep your business systems secure and running smoothly." />
+
+            <meta name="keywords" content="Managed IT Services, IT Support Services, Business IT Solutions, Network Management, Cybersecurity Services, Cloud IT Services, IT Infrastructure Management, Gladiuse Sport" />
+
+            <meta name="author" content="Gladiuse Sport" />
             <meta name="robots" content="index, follow" />
             <link rel="canonical" href="https://www.gladiusesport.com/services/managed-it-services/" />
 
-            {/* Open Graph Meta Tags */}
-            <meta property="og:title" content="Managed IT Services: Complete Business Guide 2025" />
-            <meta property="og:description" content="Expert guide covering all types of managed IT services, strategic benefits, real-world case studies, and 2025 industry trends." />
+            {/* Open Graph Meta Tags   */}
+            <meta property="og:title" content="Managed IT Services for Business | 24/7 IT Support & Security" />
+            <meta property="og:description" content="Reliable managed IT services for businesses including proactive monitoring, cybersecurity protection, cloud solutions, and expert technical support." />
             <meta property="og:url" content="https://www.gladiusesport.com/services/managed-it-services/" />
-            <meta property="og:site_name" content="GladiuseSport" />
+            <meta property="og:site_name" content="Gladiuse Sport" />
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://www.gladiusesport.com/assets/img/managed-it-services.webp" />
-            <meta property="og:image:alt" content="Complete Guide to Managed IT Services and Solutions" />
+
+            <meta property="og:image" content="https://www.gladiusesport.com/assets/img/managed-it-services-og.webp" />
+            <meta property="og:image:alt" content="Managed IT Services and Business IT Support" />
             <meta property="og:image:type" content="image/webp" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
-            <meta property="og:updated_time" content="2025-06-10T00:00:00+00:00" />
+
+            <meta property="og:updated_time" content="2026-03-14T00:00:00+00:00" />
 
             {/* Twitter Card Meta Tags */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:url" content="https://www.gladiusesport.com/services/managed-it-services/" />
-            <meta name="twitter:title" content="The Definitive Guide to Managed IT Services in 2025" />
-            <meta name="twitter:description" content="Explore types of MSP services, from Cloud-Native infrastructure to AI-driven monitoring. Expert insights for modern organizations." />
-            <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/managed-it-services.webp" />
-            <meta name="twitter:image:alt" content="Managed IT Services and MSP Solutions Guide" />
-            <meta name="twitter:site" content="@GladiuseSport" />
-            <meta name="twitter:creator" content="@GladiuseSport" />
+            <meta name="twitter:title" content="Managed IT Services & Business IT Support" />
+            <meta name="twitter:description" content="Comprehensive IT management including cloud solutions, cybersecurity, network monitoring, and 24/7 technical support for modern businesses." />
+            <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/managed-it-services-og.webp" />
+            <meta name="twitter:image:alt" content="Managed IT Services & Business IT Infrastructure" />
+            <meta name="twitter:site" content="@gladiusesport" />
+            <meta name="twitter:creator" content="@gladiusesport" />
+
             {/* --- SEO SECTION END --- */}
 
             <div className="min-h-screen bg-[#f5f3ee] text-[#0a0f1e] font-sans selection:bg-blue-100">
@@ -164,13 +173,14 @@ export default function ManagedITGuide() {
                     style={{ width: `${scrollProgress}%` }}>
                 </div>
 
-
+ 
+            <ManagedITServicesSchema/>
 
                 {/* Nav */}
                 <header
                     className={`sticky top-0 z-[100] transition-all duration-300 border-b ${isScrolled
                         ? "bg-[#f5f3ee]/95 backdrop-blur-md shadow-md border-[#e2ddd6]"
-                         : "bg-[#f5f3ee] border-transparent"
+                        : "bg-[#f5f3ee] border-transparent"
                         }`}
                 >
                     <div className="max-w-7xl mx-auto flex items-center justify-between px-0 py-4">
@@ -453,7 +463,7 @@ export default function ManagedITGuide() {
 
                     <Conclusion />
 
-                    
+
 
                     <FloatingCall />
                 </main>
