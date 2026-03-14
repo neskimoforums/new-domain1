@@ -30,6 +30,10 @@
   --it-muted: #6b7280;
   --it-border: #e5e7eb;
   --it-card: #ffffff;
+
+  --font-sans-custom: var(--font-rajdhani);
+  --font-heading-custom: var(--font-orbitron);
+  --font-mono-custom: var(--font-share-tech-mono);
 }
 
  
@@ -48,7 +52,77 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading-custom), Arial, Helvetica, sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-sans-custom), Arial, Helvetica, sans-serif;
+}
+
+.font-tech {
+  font-family: var(--font-mono-custom), monospace;
+}
+
+.blink-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #00e5ff;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.orb-float-1 {
+  animation: orbFloatOne 8s ease-in-out infinite alternate;
+}
+
+.orb-float-2 {
+  animation: orbFloatTwo 9s ease-in-out infinite alternate;
+}
+
+.orb-float-3 {
+  animation: orbFloatThree 10s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloatOne {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, 30px) scale(1.08);
+  }
+}
+
+@keyframes orbFloatTwo {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-24px, -18px) scale(1.06);
+  }
+}
+
+@keyframes orbFloatThree {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(calc(-50% + 14px), calc(-50% - 16px)) scale(1.07);
+  }
 }
 
 @layer components {

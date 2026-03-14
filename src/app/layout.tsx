@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Orbitron, Rajdhani, Share_Tech_Mono, Syne } from "next/font/google";
 import "./globals.css";
 //import Navbar from "./components/Navbar"
 import Footer from "./components/Footer";
@@ -13,6 +13,24 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
   variable: "--font-syne",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-orbitron",
+});
+
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-rajdhani",
+});
+
+const shareTechMono = Share_Tech_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-share-tech-mono",
 });
 
 export const viewport: Viewport = {
@@ -66,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable}`}>
+    <html lang="en" className={`${inter.variable} ${syne.variable} ${orbitron.variable} ${rajdhani.variable} ${shareTechMono.variable}`}>
 
       <body className={inter.className}>
 
