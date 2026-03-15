@@ -288,8 +288,8 @@ export default function ContactUsClient() {
           {/* Mobile Menu */}
           <div
             className={`absolute left-0 top-full w-full border-t border-cyan-300/10 bg-[#05080f]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${isMobileMenuOpen
-                ? "visible translate-y-0 opacity-100"
-                : "invisible -translate-y-2 opacity-0"
+              ? "visible translate-y-0 opacity-100"
+              : "invisible -translate-y-2 opacity-0"
               }`}
           >
             <div className="max-h-[calc(100vh-5rem)] overflow-y-auto px-6 py-5">
@@ -421,9 +421,11 @@ export default function ContactUsClient() {
                 <div className="font-tech mb-1 text-[0.7rem] uppercase tracking-[0.2em] text-cyan-400">
                   Email
                 </div>
-                <div className="font-body text-[0.95rem] font-semibold text-white/80">
-                  hello@gladiusesport.com
-                </div>
+                <a
+                  href="mailto:support@techsupportpro.com"
+                  className="font-body text-[0.95rem] font-semibold text-white/80">
+                  support@techsupportpro.com
+                </a>
               </div>
             </div>
 
