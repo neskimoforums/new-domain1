@@ -573,14 +573,26 @@ export default function ContactUsClient() {
                       <option value="" disabled className="bg-[#0a0e1a] text-[#e0e0e0]">
                         — Select a Service —
                       </option>
-                      <option value="service1" className="bg-[#0a0e1a] text-[#e0e0e0]">
-                        Service 1 — Tournament Management
+                      <option value="helpDeskTier1" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        Help Desk Tier 1
                       </option>
-                      <option value="service2" className="bg-[#0a0e1a] text-[#e0e0e0]">
-                        Service 2 — Esport Branding &amp; Design
+                      <option value="helpDeskTier2" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        Help Desk Tier 2
                       </option>
                       <option value="service3" className="bg-[#0a0e1a] text-[#e0e0e0]">
-                        Service 3 — Coaching &amp; Team Development
+                        Microsoft 365 Admin
+                      </option>
+                      <option value="cloudSecurity" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        Cloud Security
+                      </option>
+                      <option value="networkSecurity" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        VPN & Security
+                      </option>
+                      <option value="CyberSecurity" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        Cyber Security Consulting
+                      </option>
+                      <option value="managedItServices" className="bg-[#0a0e1a] text-[#e0e0e0]">
+                        Managed IT Services
                       </option>
                     </select>
                     <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[0.65rem] text-cyan-400">
